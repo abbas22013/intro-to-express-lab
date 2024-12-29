@@ -1,13 +1,11 @@
 const express = require('express');
 const app = express();
-/*app.get('/greetings/:username',(req, res) => {
+app.get('/greetings/:username',(req, res) => {
     const username = req.params.username;
     res.send(`Hello there, ${username}!`)
 })
-app.listen(3000, () => {
-    console.log('Server is running on http://localhost:3000');
-});
-//http://localhost:3000/greetings/Christy*/
+
+//http://localhost:3000/greetings/Christy
 
 
 
@@ -17,7 +15,7 @@ app.listen(3000, () => {
 
 
 
-/*app.get('/roll/:number', (req, res) => {
+app.get('/roll/:number', (req, res) => {
     const number = req.params.number;
 
     if (isNaN(number)) {
@@ -33,9 +31,7 @@ app.listen(3000, () => {
     const randomRoll = Math.floor(Math.random() * (maxNumber + 1));
     res.send(`You rolled a ${randomRoll}.`);
   });
-  app.listen(3000, () => {
-    console.log('Server is running on http://localhost:3000');
-  });
+ 
   //http://localhost:3000/roll/6 */
 
 
@@ -43,7 +39,7 @@ app.listen(3000, () => {
 
 
 
-  /*const collectibles = [
+  const collectibles = [
     { name: 'shiny ball', price: 5.95 },
     { name: 'autographed picture of a dog', price: 10 },
     { name: 'vintage 1970s yogurt SOLD AS-IS', price: 0.99 }
@@ -62,14 +58,12 @@ app.listen(3000, () => {
       res.send(`So, you want the ${item.name}? For ${item.price}, it can be yours!`);
     }
   });
-  app.listen(3000, () => {
-    console.log('Server is running on http://localhost:3000');
-  });
+ 
 //http://localhost:3000/collectibles/2 */
 
 
 
-/*app.get('/hello', (req, res) => {
+app.get('/hello', (req, res) => {
     const name = req.query.name;
     const age = req.query.age;
     if (name && age) {
@@ -78,11 +72,9 @@ app.listen(3000, () => {
       res.send('Please provide both your name and age as query parameters.');
     }
   });
-  app.listen(3000, () => {
-    console.log('Server is running on http://localhost:3000');
-  });
+ 
 
-  //http://localhost:3000/hello?name=Christy&age=40   */
+  //http://localhost:3000/hello?name=Christy&age=40   
 
 
 
@@ -126,9 +118,15 @@ const shoes = [
     res.json(filteredShoes);
   });
   
-  app.listen(3000, () => {
-    console.log('Server is running on http://localhost:3000');
-  });
+  
+
+
+  const PORT = 3000;  
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});
+
+  
 //http://localhost:3000/shoes?min-price=50&type=boot
 //http://localhost:3000/shoes?type=sandal
 
